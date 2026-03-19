@@ -1,0 +1,57 @@
+:root {
+  --bs-primary: #740305;
+  --bs-primary-rgb: 116, 3, 5;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+     --bs-dark: #740305;
+  --bs-dark-rgb: 116, 3, 5;
+}
+
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  position: relative;
+  padding-bottom: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Hover & Active */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--warning-color) !important;
+}
+
+/* Underline */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--warning-color);
+  transition: width 0.25s ease;
+}
+
+/* Show underline on hover & active */
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+
+
+
+
+
+
