@@ -12,13 +12,14 @@ export function LoginPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login/",
+        "http://localhost:5005/api/auth/login/",
         { username, password },
       );
 
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("username", response.data.username);
+        localStorage.setItem("role", response.data.user.role);
         alert("Login successfully");
         navigate("/dashboard");
       }

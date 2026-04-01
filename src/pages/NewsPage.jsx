@@ -1,14 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { FooterPage } from "../components/FooterPage";
 
-export function NewsPage({ news, loading, error, reloadNews }) {
+export function NewsPage() {
+  const [news, setNews] = useState([]);
+  const [loadingNews, setLoadingNews] = useState(true);
+  const [errorNews, setErrorNews] = useState("");
+
+  // ✅ DEFINE FUNCTION OUTSIDE useEffect
+  const fetchNews = async () => {
+    setLoadingNews(true);
+    setErrorNews("");
+
+    try {
+      const res = await axios.get("http://localhost:5005/api/news");
+      setNews(res.data); //When data comes successfully the in the finally block:false
+    } catch (err) {
+      console.error(err);
+      setErrorNews("Failed to load news");
+    } finally {
+      setLoadingNews(false); //Loading finished. Data is ready.
+    }
+  };
+
+  // ✅ CALL IT ONCE
+  useEffect(() => {
+    fetchNews();
+  }, []);
+
   return (
     <>
       <link rel="icon" href="/logo1.png" />
       <title>News - Zereyakob DIY Center</title>
 
       {/* HEADER */}
-      <section className="bg-[#740305] text-white py-12 mt-12">
+      <section className="bg-[#740305] text-white py-12 mt-10">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-3">
             Zereyakob DIY Center News & Events
@@ -22,23 +48,23 @@ export function NewsPage({ news, loading, error, reloadNews }) {
       {/* CONTENT */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Loading */}
-        {loading && (
+        {loadingNews && (
           <div className="text-center">
             <p className="text-gray-500">Loading news...</p>
           </div>
         )}
 
         {/* Error */}
-        {error && (
+        {errorNews && (
           <div className="bg-yellow-100 text-yellow-700 p-6 rounded-xl text-center">
             <h4 className="text-xl font-semibold mb-2">Unable to Load News</h4>
-            <p>{error}</p>
+            <p>{errorNews}</p>
             <p className="text-sm mt-1">
               Please check if backend is running on port 5000.
             </p>
 
             <button
-              onClick={reloadNews}
+              onClick={fetchNews}
               className="mt-4 bg-[#740305] text-white px-4 py-2 rounded-lg"
             >
               Try Again
@@ -47,14 +73,14 @@ export function NewsPage({ news, loading, error, reloadNews }) {
         )}
 
         {/* Empty */}
-        {!loading && !error && news.length === 0 && (
+        {!loadingNews && !errorNews && news.length === 0 && (
           <div className="text-center text-gray-500">
             No news available at the moment.
           </div>
         )}
 
         {/* NEWS GRID */}
-        {!loading && !error && news.length > 0 && (
+        {!loadingNews && !errorNews && news.length > 0 && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {news.map((item) => (
               <div
@@ -64,7 +90,7 @@ export function NewsPage({ news, loading, error, reloadNews }) {
                 {/* IMAGE */}
                 {item.image ? (
                   <img
-                    src={`http://localhost:5000/uploads/${item.image}`}
+                    src={`http://localhost:5005/uploads/${item.image}`}
                     alt={item.title}
                     className="h-56 w-full object-cover"
                   />
@@ -87,9 +113,14 @@ export function NewsPage({ news, loading, error, reloadNews }) {
                   </p>
 
                   <span className="text-xs text-gray-400 mt-4">
-                    {item.created_at
-                      ? new Date(item.created_at).toLocaleDateString()
-                      : "Date not available"}
+                    uploaded at:
+                    {item.created_at ? (
+                      <strong>
+                        {new Date(item.created_at).toLocaleDateString()}
+                      </strong>
+                    ) : (
+                      "Date not available"
+                    )}
                   </span>
                 </div>
               </div>

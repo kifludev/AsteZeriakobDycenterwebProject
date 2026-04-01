@@ -8,7 +8,7 @@ export function Comments() {
   async function loadComments() {
     const token = localStorage.getItem("token"); // always get latest token
     try {
-      const res = await axios.get("http://localhost:5000/api/feedback", {
+      const res = await axios.get("http://localhost:5005/api/feedback", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setComments(res.data); // safe inside effect or function
@@ -31,7 +31,7 @@ export function Comments() {
 
     const token = localStorage.getItem("token"); // fresh token
     try {
-      await axios.delete(`http://localhost:5000/api/feedback/${id}`, {
+      await axios.delete(`http://localhost:5005/api/feedback/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       loadComments(); // reload comments after deletion

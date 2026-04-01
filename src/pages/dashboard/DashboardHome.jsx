@@ -1,33 +1,42 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export function DashboardHome({ news }) {
+export function DashboardHome() {
   const [categories, setCategories] = useState([]);
   const [feedback, setFeedback] = useState([]);
   const [bookings, setBookings] = useState([]);
   const [futureBookings, setFutureBookings] = useState([]);
-  const [jobs, setJobs] = useState([]); // ✅ NEW
+  const [jobs, setJobs] = useState([]);
+  const [applications, setApplications] = useState([]);
+  const [news, setNews] = useState([]); // ✅ NEW
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/categories")
+      .get("http://localhost:5005/api/categories")
       .then((res) => setCategories(res.data));
 
     axios
-      .get("http://localhost:5000/api/feedback")
+      .get("http://localhost:5005/api/news")
+      .then((res) => setNews(res.data));
+
+    axios
+      .get("http://localhost:5005/api/feedback")
       .then((res) => setFeedback(res.data));
 
-    axios.get("http://localhost:5000/api/bookings").then((res) => {
+    axios.get("http://localhost:5005/api/bookings").then((res) => {
       setBookings(res.data);
       const today = new Date().toISOString().split("T")[0];
       const future = res.data.filter((b) => b.booking_date >= today);
       setFutureBookings(future);
     });
 
-    // ✅ FETCH JOBS (VACANCIES)
     axios
-      .get("http://localhost:5000/api/jobs")
+      .get("http://localhost:5005/api/jobs")
       .then((res) => setJobs(res.data));
+
+    axios
+      .get("http://localhost:5005/api/applications") // ✅ NEW
+      .then((res) => setApplications(res.data.data));
   }, []);
 
   const stats = [
@@ -62,10 +71,16 @@ export function DashboardHome({ news }) {
       color: "text-indigo-500",
     },
     {
-      title: "Vacancies", // ✅ NEW CARD
+      title: "Vacancies",
       count: jobs.length,
       icon: "fas fa-briefcase",
       color: "text-purple-500",
+    },
+    {
+      title: "Applications", // ✅ NEW CARD
+      count: applications.length,
+      icon: "fas fa-file-alt",
+      color: "text-pink-500",
     },
   ];
 
@@ -73,13 +88,13 @@ export function DashboardHome({ news }) {
     <div className="p-6">
       <h2 className="text-2xl font-semibold mb-6">📊 Dashboard Overview</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4">
         {stats.map((stat) => (
           <div
             key={stat.title}
             className="flex flex-col items-center bg-white p-6 rounded-lg shadow hover:shadow-md transition"
           >
-            <i className={`${stat.icon} ${stat.color} text-3xl mb-3`}></i>
+            <i className={`${stat.icon} ${stat.color} text-3xl mb-3`} />
             <h3 className="text-2xl font-bold">{stat.count}</h3>
             <p className="text-gray-600 mt-1 text-center">{stat.title}</p>
           </div>

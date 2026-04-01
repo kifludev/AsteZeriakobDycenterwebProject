@@ -2,10 +2,10 @@ import { NavLink } from "react-router-dom";
 export function MobileMenu({ menuOpen, setMenuOpen }) {
   return (
     <div
-      className={`fixed top-0 left-0 w-full  bg-[rgba(10,10,10,0.8)] z-41 flex flex-col items-center justify-center overflow-y-auto py-10 transition-all duration-300 ease-in-out   ${
+      className={`fixed top-0 left-0 w-full  bg-[rgba(10,10,10,0.8)] z-48 flex flex-col items-center justify-center overflow-y-auto py-10 transition-all duration-300 ease-in-out   ${
         menuOpen
           ? "h-screen bg-red-500 opacity-100 pointer-events-auto"
-          : "h-screen opacity-0 pointer-events-none"
+          : "h-0 opacity-0 pointer-events-none"
       }`}
     >
       <button

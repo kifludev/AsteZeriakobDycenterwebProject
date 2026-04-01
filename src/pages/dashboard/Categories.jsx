@@ -12,7 +12,7 @@ export function Categories() {
   async function loadCategories() {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/categories",
+        "http://localhost:5005/api/categories",
         axiosConfig,
       );
       setCategories(res.data);
@@ -31,7 +31,7 @@ export function Categories() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/categories",
+        "http://localhost:5005/api/categories",
         { name: categoryName },
         axiosConfig,
       );
@@ -49,7 +49,7 @@ export function Categories() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/categories/${id}`,
+        `http://localhost:5005/api/categories/${id}`,
         { name: newName },
         axiosConfig,
       );
@@ -65,7 +65,7 @@ export function Categories() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/categories/${id}`,
+        `http://localhost:5005/api/categories/${id}`,
         axiosConfig,
       );
       loadCategories();

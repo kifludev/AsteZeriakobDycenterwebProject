@@ -45,9 +45,10 @@ export function FeedbackPage() {
   return (
     <>
       <link rel="icon" href="/logo1.png" />
+      <title>Feedback - Zereyakob DIY Center</title>
 
       {/* HEADER */}
-      <section className="bg-[#740305] text-white py-12 mt-12">
+      <section className="bg-[#740305] text-white py-12 mt-10">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-2">Feedback & Comments</h1>
           <p className="text-lg">We Value Your Input</p>

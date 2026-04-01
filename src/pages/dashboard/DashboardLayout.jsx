@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { Navbar } from "../../components/DashboardNavbar";
+import { DashboardNavbar } from "./DashboardNavbar";
 import { Sidebar } from "../../components/Sidebar";
 
 export function DashboardLayout() {
@@ -12,7 +12,7 @@ export function DashboardLayout() {
 
   return (
     <>
-      <Navbar onLogout={logout} />
+      <DashboardNavbar onLogout={logout} />
 
       <div className="flex min-h-screen">
         {/* SIDEBAR */}

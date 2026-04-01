@@ -27,17 +27,17 @@ export function FooterPage() {
                 </Link>
               </li>
               <li>
-                <Link to="/admission" className="hover:underline">
-                  Admissions
+                <Link to="/vacancy" className="hover:underline">
+                  Vacancy
                 </Link>
               </li>
               <li>
-                <Link to="/research" className="hover:underline">
-                  Research
+                <Link to="/booking" className="hover:underline">
+                  Booking
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:underline">
+                <Link to="/feedback" className="hover:underline">
                   Contact & Feedback
                 </Link>
               </li>

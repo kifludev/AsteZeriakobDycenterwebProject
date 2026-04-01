@@ -9,7 +9,7 @@ export function AboutPage() {
       <title>About Us - Zereyakob DIY Center</title>
 
       {/* HEADER */}
-      <section className="bg-[#740305] text-white py-12 mt-12">
+      <section className="bg-[#740305] text-white py-12 mt-10">
         <div className="max-w-6xl mx-auto px-4">
           <h1 className="text-4xl font-bold mb-4">
             About Zereyakob DIY Center

@@ -13,7 +13,7 @@ export function ServicePage() {
       <link rel="icon" href="/logo1.png" />
       <title>Services - Zereyakob DIY Center</title>
       {/* HEADER */}
-      <section className="bg-[#740305] text-white py-12 mt-12">
+      <section className="bg-[#740305] text-white py-12 mt-10">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold mb-4">
             Zereyakob DIY Center Services
@@ -101,7 +101,7 @@ export function ServicePage() {
         {/* FACILITIES */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-center mb-10">
-            Campus Facilities
+            Youth Facilities
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -145,43 +145,10 @@ export function ServicePage() {
           </div>
         </section>
 
-        {/* HOUSING */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-center mb-10">
-            Student Housing
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white shadow-md rounded-xl p-6">
-              <h4 className="font-semibold text-lg mb-3">On-Campus Housing</h4>
-              <ul className="list-disc ml-5 text-gray-600 mb-4">
-                <li>Furnished rooms</li>
-                <li>Study areas</li>
-                <li>24/7 security</li>
-              </ul>
-              <button className="bg-[#740305] text-white px-4 py-2 rounded">
-                Apply
-              </button>
-            </div>
-
-            <div className="bg-white shadow-md rounded-xl p-6">
-              <h4 className="font-semibold text-lg mb-3">Off-Campus Support</h4>
-              <ul className="list-disc ml-5 text-gray-600 mb-4">
-                <li>Rental listings</li>
-                <li>Roommate matching</li>
-                <li>Guidance</li>
-              </ul>
-              <button className="border border-[#740305] text-[#740305] px-4 py-2 rounded">
-                Resources
-              </button>
-            </div>
-          </div>
-        </section>
-
         {/* HEALTH */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-center mb-10">
-            Student Health Services
+            Youth Health Services
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6">

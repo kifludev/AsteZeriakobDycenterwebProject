@@ -12,7 +12,7 @@ export function Bookings() {
   async function loadBookings() {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/bookings",
+        "http://localhost:5005/api/bookings",
         axiosConfig,
       );
       setBooks(res.data);
@@ -35,7 +35,7 @@ export function Bookings() {
       );
       loadBookings();
     } catch (err) {
-      console.error("Failed to update status", err);
+      console.error(err.response.data);
     }
   }
 
@@ -45,7 +45,7 @@ export function Bookings() {
 
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/bookings/${id}`,
+        `http://localhost:5005/api/bookings/${id}`,
         axiosConfig,
       );
       alert(res.data.message);
@@ -131,12 +131,12 @@ export function Bookings() {
                   {new Date(book.booking_date).toLocaleDateString()}
                 </td>
                 <td className="px-4 py-3">{book.booking_time}</td>
-                <td className="px-4 py-3">{book.duration}</td>
+                <td className="px-8  py-3">{book.duration}</td>
 
                 {/* STATUS BADGE */}
                 <td className="px-4 py-3">
                   <span
-                    className={`px-2 py-1 rounded text-xs ${
+                    className={` py-1 rounded text-xs ${
                       book.status === "approved"
                         ? "bg-green-100 text-green-700"
                         : book.status === "rejected"
@@ -149,7 +149,7 @@ export function Bookings() {
                 </td>
 
                 {/* ACTIONS */}
-                <td className="px-4 py-3 flex gap-2 justify-center">
+                <td className=" py-3 flex gap-2 justify-center">
                   {book.status === "pending" && (
                     <>
                       <button
@@ -170,7 +170,7 @@ export function Bookings() {
 
                   <button
                     onClick={() => deleteBooking(book.id)}
-                    className="bg-red-600 text-white px-2 py-1 rounded text-xs"
+                    className="bg-red-600 text-white px-2 py-1 rounded text-xs mr-2"
                   >
                     Delete
                   </button>

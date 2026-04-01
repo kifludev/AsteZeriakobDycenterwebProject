@@ -21,13 +21,13 @@ export function News() {
   }, []);
 
   async function loadNews() {
-    const res = await axios.get("http://localhost:5000/api/news", axiosConfig);
+    const res = await axios.get("http://localhost:5005/api/news", axiosConfig);
     setNews(res.data);
   }
 
   async function loadCategories() {
     const res = await axios.get(
-      "http://localhost:5000/api/categories",
+      "http://localhost:5005/api/categories",
       axiosConfig,
     );
     setCategories(res.data);
@@ -44,7 +44,7 @@ export function News() {
     formData.append("category_id", newsCategory);
     formData.append("image", newsImage);
 
-    await axios.post("http://localhost:5000/api/news", formData, {
+    await axios.post("http://localhost:5005/api/news", formData, {
       headers: {
         ...axiosConfig.headers,
         "Content-Type": "multipart/form-data",
@@ -60,7 +60,7 @@ export function News() {
 
   async function handleDeleteNews(id) {
     if (!confirm("Delete this news?")) return;
-    await axios.delete(`http://localhost:5000/api/news/${id}`, axiosConfig);
+    await axios.delete(`http://localhost:5005/api/news/${id}`, axiosConfig);
     loadNews();
   }
 
@@ -77,7 +77,7 @@ export function News() {
     formData.append("category_id", category_id);
     if (imageFile) formData.append("image", imageFile);
 
-    await axios.put(`http://localhost:5000/api/news/${id}`, formData, {
+    await axios.put(`http://localhost:5005/api/news/${id}`, formData, {
       headers: {
         ...axiosConfig.headers,
         "Content-Type": "multipart/form-data",
