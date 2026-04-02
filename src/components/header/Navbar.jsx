@@ -10,7 +10,7 @@ export function Navbar({ menuOpen, setMenuOpen }) {
     <nav className="fixed top-0 w-full z-40 bg-[rgba(var(--bs-primary-rgb),0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg navbar-nav">
       <div className="w-full relative">
         <div className="flex items-center justify-between  h-12">
-          <NavLink to="/" className="flex items-center ml-7 p-0">
+          <NavLink to="/AsteZeriakobDycenterwebProject" className="flex items-center ml-7 p-0">
             <img
               src="logo1.png"
               className="mx-0"
@@ -30,7 +30,7 @@ export function Navbar({ menuOpen, setMenuOpen }) {
 
           <div className="hidden md:flex items-center space-x-4 mt-3 ">
             <NavLink
-              to="/"
+              to="/AsteZeriakobDycenterwebProject"
               className="text-gray-300 hover:text-white transition-colors ml-5 nav-link"
             >
               Home

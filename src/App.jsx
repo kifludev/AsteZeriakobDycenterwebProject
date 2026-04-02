@@ -40,7 +40,7 @@ function App() {
       )}
 
       <Routes>
-        <Route path="/AsteZeriakobDycenterwebProject" element={<HomePage />} />
+        <Route path="AsteZeriakobDycenterwebProject" element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
 
         {/* ✅ PASS FUNCTION CORRECTLY */}
