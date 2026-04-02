@@ -7,9 +7,9 @@ export function Navbar({ menuOpen, setMenuOpen }) {
     document.body.style.overflow = menuOpen ? "hidden" : "";
   }, [menuOpen]);
   return (
-    <nav className="fixed top-0 w-full z-40 bg-[rgba(var(--bs-primary-rgb),0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg navbar-nav">
-      <div className="w-full relative">
-        <div className="flex items-center justify-between  h-12">
+    <nav className="fixed top-0 w-full z-40 bg-[rgba(var(--bs-primary-rgb),0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg navbar-nav pb-15">
+      <div className="w-full relative mr-20">
+        <div className="flex items-center ">
           <NavLink to="/AsteZeriakobDycenterwebProject" className="flex items-center ml-7 p-0">
             <img
               src="logo1.png"
@@ -28,7 +28,7 @@ export function Navbar({ menuOpen, setMenuOpen }) {
             &#9776;
           </div>
 
-          <div className="hidden md:flex items-center space-x-4 mt-3 ">
+          <div className="hidden md:flex items-center space-x-4 mt-3 ml-70 ">
             <NavLink
               to="/AsteZeriakobDycenterwebProject"
               className="text-gray-300 hover:text-white transition-colors ml-5 nav-link"

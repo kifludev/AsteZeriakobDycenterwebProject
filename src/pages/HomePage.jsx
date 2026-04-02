@@ -1,11 +1,58 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
 import "./HomePage.css";
 import { FooterPage } from "../components/FooterPage";
-import { useEffect, useState } from "react";
+
 import axios from "axios";
 
 export function HomePage() {
   const [news, setNews] = useState([]);
+
+
+const statsRef = useRef(null);
+const [startCount, setStartCount] = useState(false);
+
+
+
+
+
+
+
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setStartCount(true);
+      }
+    },
+    { threshold: 0.3 } // trigger when 30% visible
+  );
+
+  if (statsRef.current) {
+    observer.observe(statsRef.current);
+  }
+
+  return () => {
+    if (statsRef.current) observer.unobserve(statsRef.current);
+  };
+}, []);
+
+
+
+
+
+
+
+
+
+  const [counts, setCounts] = useState({
+  trained: 0,
+  faculty: 0,
+  projects: 0,
+  years: 0,
+});
   const loadNews = async () => {
     try {
       const res = await axios.get("http://localhost:5005/api/news");
@@ -25,6 +72,22 @@ export function HomePage() {
     loadNews();
   }, []);
 
+
+  useEffect(() => {
+  if (!startCount) return;
+
+  const interval = setInterval(() => {
+    setCounts((prev) => ({
+      trained: prev.trained < 1000 ? prev.trained + 20 : 1000,
+      faculty: prev.faculty < 200 ? prev.faculty + 5 : 200,
+      projects: prev.projects < 50 ? prev.projects + 1 : 50,
+      years: prev.years < 35 ? prev.years + 1 : 35,
+    }));
+  }, 30);
+
+  return () => clearInterval(interval);
+}, [startCount]);
+
   // Mock news (replace later with API)
 
   return (
@@ -33,7 +96,7 @@ export function HomePage() {
       <title>Zereyakob DIY Center home page</title>
 
       {/* HERO */}
-      <section className="min-h-screen flex items-center hero-banner">
+      <section className="min-h-screen flex items-center hero-banner mt-25">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center min-h-screen">
             <div className="w-full md:w-1/2">
@@ -173,28 +236,38 @@ export function HomePage() {
       </section>
 
       {/* STATS */}
-      <section className="py-12 bg-white">
+      <section ref={statsRef} className="py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <h2 className="text-blue-600 text-2xl font-bold">1000+</h2>
-              <p>Youth Trained</p>
-            </div>
+                  <div>
+                    <h2 className="text-blue-600 text-2xl font-bold">
+                      {counts.trained}+
+                    </h2>
+                    <p>Youth Trained</p>
+                  </div>
 
             <div>
-              <h2 className="text-blue-600 text-2xl font-bold">200+</h2>
-              <p>Faculty Members</p>
-            </div>
+            <h2 className="text-blue-600 text-2xl font-bold">
+              {counts.trained}+
+            </h2>
+            <p>Youth Trained</p>
+          </div>
 
-            <div>
-              <h2 className="text-blue-600 text-2xl font-bold">50+</h2>
-              <p>Community Projects</p>
-            </div>
+        <div>
+          <h2 className="text-blue-600 text-2xl font-bold">
+            {counts.faculty}+
+          </h2>
+          <p>Faculty Members</p>
+        </div>
 
-            <div>
-              <h2 className="text-blue-600 text-2xl font-bold">35</h2>
-              <p>Years of Excellence</p>
-            </div>
+      
+
+        <div>
+          <h2 className="text-blue-600 text-2xl font-bold">
+            {counts.years}
+          </h2>
+          <p>Years of Excellence</p>
+        </div>
           </div>
         </div>
       </section>
