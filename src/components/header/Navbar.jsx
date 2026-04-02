@@ -12,7 +12,7 @@ export function Navbar({ menuOpen, setMenuOpen }) {
         <div className="flex items-center ">
           <NavLink to="/AsteZeriakobDycenterwebProject" className="flex items-center ml-7 p-0">
             <img
-              src="logo1.png"
+              src="diy.png"
               className="mx-0"
               width="150"
               height="auto"

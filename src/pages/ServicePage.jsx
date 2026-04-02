@@ -10,7 +10,7 @@ export function ServicePage() {
 
   return (
     <>
-      <link rel="icon" href="/logo1.png" />
+      <link rel="icon" href="/diy.png" />
       <title>Services - Zereyakob DIY Center</title>
       {/* HEADER */}
       <section className="bg-[#740305] text-white py-12 mt-10">

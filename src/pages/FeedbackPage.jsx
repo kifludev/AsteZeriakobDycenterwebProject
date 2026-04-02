@@ -44,7 +44,7 @@ export function FeedbackPage() {
 
   return (
     <>
-      <link rel="icon" href="/logo1.png" />
+      <link rel="icon" href="/diy.png" />
       <title>Feedback - Zereyakob DIY Center</title>
 
       {/* HEADER */}

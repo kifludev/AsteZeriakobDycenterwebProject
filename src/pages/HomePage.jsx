@@ -92,7 +92,7 @@ useEffect(() => {
 
   return (
     <>
-      <link rel="icon" href="/logo1.png" />
+      <link rel="icon" href="/diy.png" />
       <title>Zereyakob DIY Center home page</title>
 
       {/* HERO */}

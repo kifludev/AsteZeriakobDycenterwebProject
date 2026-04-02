@@ -125,7 +125,7 @@ export function BookingPage() {
   // ---------------- UI ----------------
   return (
     <>
-      <link rel="icon" href="/logo1.png" />
+      <link rel="icon" href="/diy.png" />
       <title>Booking - Zereyakob DIY Center</title>
       {/* HEADER */}
       <section className="bg-[#740305] text-white py-14 text-center">

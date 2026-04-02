@@ -5,7 +5,7 @@ import { MobileMenu } from "../components/header/MobileMenu";
 export function AboutPage() {
   return (
     <>
-      <link rel="icon" href="/logo1.png" />
+      <link rel="icon" href="/diy.png" />
       <title>About Us - Zereyakob DIY Center</title>
 
       {/* HEADER */}
