@@ -234,7 +234,7 @@ export function BookingPage() {
             <button
               type="submit"
               disabled={loading || checking}
-              className="w-full bg-[#740305] text-white py-3 rounded-xl text-lg font-semibold hover:opacity-90 transition disabled:opacity-50"
+              className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition w-full"
             >
               {loading
                 ? "Submitting..."

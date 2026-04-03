@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FooterPage } from "../components/FooterPage";
 
+
 export function ServicePage() {
   const [open, setOpen] = useState(null);
 
@@ -42,7 +43,7 @@ export function ServicePage() {
 
               <button
                 onClick={() => toggle(1)}
-                className="border border-[#740305] text-[#740305] px-4 py-2 rounded"
+                className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
               >
                 Learn More
               </button>
@@ -64,7 +65,7 @@ export function ServicePage() {
 
               <button
                 onClick={() => toggle(2)}
-                className="border border-[#740305] text-[#740305] px-4 py-2 rounded"
+                className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
               >
                 Learn More
               </button>
@@ -78,13 +79,13 @@ export function ServicePage() {
 
             {/* CARD 3 */}
             <div className="bg-white shadow-md rounded-xl p-6 text-center">
-              <i className="fas fa-basketball-ball text-4xl text-yellow-500 mb-3"></i>
+              <i className="fas fa-basketball-ball text-4xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-3"></i>
               <h4 className="font-semibold text-lg mb-2">Basketball</h4>
               <p className="mb-3">Safe courts for training and competitions.</p>
 
               <button
                 onClick={() => toggle(3)}
-                className="border border-[#740305] text-[#740305] px-4 py-2 rounded"
+                className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
               >
                 Learn More
               </button>
@@ -106,7 +107,8 @@ export function ServicePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white shadow-md rounded-xl p-6">
-              <h4 className="font-semibold text-lg mb-2">🚿 Shower Service</h4>
+              <i className="fas fa-shower text-6xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-3"></i>
+              <h4 className="font-semibold text-lg mb-2"> Shower Service</h4>
               <ul className="list-disc ml-5 text-gray-600">
                 <li>24/7 access</li>
                 <li>Private areas</li>
@@ -115,7 +117,8 @@ export function ServicePage() {
             </div>
 
             <div className="bg-white shadow-md rounded-xl p-6">
-              <h4 className="font-semibold text-lg mb-2">💻 IT Support</h4>
+              <i className="fas fa-user text-6xl text-[rgba(var(--bs-primary-rgb),0.8)]"></i>
+              <h4 className="font-semibold text-lg mb-2">IT Support</h4>
               <ul className="list-disc ml-5 text-gray-600">
                 <li>24/7 support</li>
                 <li>Campus WiFi</li>
@@ -124,7 +127,8 @@ export function ServicePage() {
             </div>
 
             <div className="bg-white shadow-md rounded-xl p-6">
-              <h4 className="font-semibold text-lg mb-2">🍽 Cafeteria</h4>
+              <i className="fas fa-coffee text-6xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-3"></i>
+              <h4 className="font-semibold text-lg mb-2">Cafeteria</h4>
               <ul className="list-disc ml-5 text-gray-600">
                 <li>Healthy meals</li>
                 <li>Snack bars</li>
@@ -133,8 +137,9 @@ export function ServicePage() {
             </div>
 
             <div className="bg-white shadow-md rounded-xl p-6">
+              <i className="fas fa-dumbbell text-6xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-3"></i>
               <h4 className="font-semibold text-lg mb-2">
-                🏋 Recreation Center
+                 Recreation Center
               </h4>
               <ul className="list-disc ml-5 text-gray-600">
                 <li>Gym</li>
@@ -176,14 +181,13 @@ export function ServicePage() {
           <div className="bg-white shadow-md rounded-xl p-6 grid md:grid-cols-2 gap-6 items-center">
             <div>
               <h2 className="text-xl font-bold mb-3">Disability Support</h2>
+              <i className="fas fa-wheelchair text-6xl text-[#740305] mb-3"></i>
               <ul className="list-disc ml-5 text-gray-600">
                 <li>Academic support</li>
                 <li>Assistive tech</li>
                 <li>Accessibility help</li>
               </ul>
             </div>
-
-            <div className="text-center text-5xl text-[#740305]">♿</div>
           </div>
         </section>
       </div>

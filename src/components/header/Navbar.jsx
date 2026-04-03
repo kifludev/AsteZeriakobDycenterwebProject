@@ -10,16 +10,27 @@ export function Navbar({ menuOpen, setMenuOpen }) {
     <nav className="fixed top-0 w-full z-40 bg-[rgba(var(--bs-primary-rgb),0.8)] backdrop-blur-lg border-b border-white/10 shadow-lg navbar-nav pb-15">
       <div className="w-full relative mr-20">
         <div className="flex items-center ">
-          <NavLink to="/AsteZeriakobDycenterwebProject" className="flex items-center ml-7 p-0">
-            <img
-              src="diy.png"
-              className="mx-0"
-              width="150"
-              height="auto"
-              alt="Zereyakob DIY Center"
-            />
-            <sub className="text-xl">Zereyakob DIY Center</sub>
-          </NavLink>
+<NavLink
+  to="/AsteZeriakobDycenterwebProject"
+  className="flex items-center gap-3 ml-6"
+>
+  {/* Logo Image */}
+  <img
+    src="diy.png"
+    alt="Zereyakob DIY Center Logo"
+    className="w-12 h-12 object-contain drop-shadow-md "
+  />
+
+  {/* Logo Text */}
+  <div className="leading-tight">
+    <h1 className="text-white text-lg font-bold tracking-wide">
+      Zereyakob
+    </h1>
+    <span className="text-sm text-orange-400 font-semibold tracking-wider">
+      DIY CENTER
+    </span>
+  </div>
+</NavLink>
 
           <div
             className="md:hidden w-7 h-5 cursor-pointer z-40 absolute right-0"
@@ -36,43 +47,43 @@ export function Navbar({ menuOpen, setMenuOpen }) {
               Home
             </NavLink>
             <NavLink
-              to="/news"
+              to="AsteZeriakobDycenterwebProject/news"
               className="text-gray-300 hover:text-white transition-colors nav-link"
             >
               News
             </NavLink>
             <NavLink
-              to="/about"
+              to="AsteZeriakobDycenterwebProject/about"
               className="text-gray-300 hover:text-white transition-colors nav-link"
             >
               About
             </NavLink>
             <NavLink
-              to="/booking"
+              to="AsteZeriakobDycenterwebProject/booking"
               className="text-gray-300 hover:text-white transition-colors nav-link"
             >
               Booking
             </NavLink>
             <NavLink
-              to="/service"
+              to="AsteZeriakobDycenterwebProject/service"
               className="text-gray-300 hover:text-white transition-colors nav-link"
             >
               Services
             </NavLink>
             <NavLink
-              to="/feedback"
+              to="AsteZeriakobDycenterwebProject/feedback"
               className="text-gray-300 hover:text-white transition-colors nav-link"
             >
               Feedback
             </NavLink>
             <NavLink
-              to="/vacancy"
+              to="AsteZeriakobDycenterwebProject/vacancy"
               className="text-gray-300 hover:text-white transition-colors nav-link"
             >
               Vacancy
             </NavLink>
             <NavLink
-              to="/login"
+              to="AsteZeriakobDycenterwebProject/login"
               className="text-gray-300 hover:text-white transition-colors nav-link"
             >
               Login

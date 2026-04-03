@@ -132,7 +132,7 @@ export function FeedbackPage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-[#740305] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90"
+                  className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
                 >
                   Submit Feedback
                 </button>

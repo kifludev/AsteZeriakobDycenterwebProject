@@ -112,14 +112,14 @@ useEffect(() => {
               <div className="mt-6 flex gap-4">
                 <Link
                   to="/admission"
-                  className="text-white px-6 py-3 rounded-lg font-semibold bg-blue-600 hover:scale-105 transition"
+                  className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
                 >
                   Register Now
                 </Link>
 
                 <Link
                   to="/about"
-                  className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:scale-105 transition"
+                  className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
                 >
                   Learn More
                 </Link>
@@ -138,17 +138,17 @@ useEffect(() => {
 
           <div className="grid gap-6 md:grid-cols-3">
             <div className="bg-white shadow-md rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-              <i className="fas fa-laptop-code text-4xl text-blue-600 mb-4"></i>
+              <i className="fas fa-laptop-code text-4xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-4"></i>
               <h3 className="text-xl font-semibold mb-2">Online Training</h3>
               <p>Flexible courses anytime, anywhere.</p>
             </div>
             <div className="bg-white shadow-md rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-              <i className="fas fa-award text-4xl text-blue-600 mb-4"></i>
+              <i className="fas fa-award text-4xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-4"></i>
               <h3 className="text-xl font-semibold mb-2">Scholarship</h3>
               <p>Learn programming, internet, and office tools.</p>
             </div>
             <div className="bg-white shadow-md rounded-xl p-6 text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
-              <i className="fas fa-laptop-code text-4xl text-blue-600 mb-4"></i>
+              <i className="fas fa-laptop-code text-4xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-4"></i>
               <h3 className="text-xl font-semibold mb-2">
                 Free Computer Training
               </h3>
@@ -163,7 +163,7 @@ useEffect(() => {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold mb-6">Eligibility</h2>
           <div className="bg-white shadow-md rounded-xl p-6 transform transition hover:scale-105">
-            <i className="fas fa-user-check text-4xl text-purple-600 mb-4"></i>
+            <i className="fas fa-user-check text-4xl text-[rgba(var(--bs-primary-rgb),0.8)] mb-4"></i>
             <p className="text-lg">
               Age requirement: <strong> 18 &minus;35 years</strong>
             </p>
@@ -227,7 +227,7 @@ useEffect(() => {
           <div className="text-center mt-6">
             <Link
               to="/news"
-              className="bg-blue-600 text-white px-6 py-3 rounded hover:scale-105 transition"
+              className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
             >
               View All News
             </Link>
@@ -240,21 +240,21 @@ useEffect(() => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                   <div>
-                    <h2 className="text-blue-600 text-2xl font-bold">
+                    <h2 className="text-[rgba(var(--bs-primary-rgb),0.8)] text-2xl font-bold">
                       {counts.trained}+
                     </h2>
                     <p>Youth Trained</p>
                   </div>
 
             <div>
-            <h2 className="text-blue-600 text-2xl font-bold">
+            <h2 className="text-[rgba(var(--bs-primary-rgb),0.8)] text-2xl font-bold">
               {counts.trained}+
             </h2>
             <p>Youth Trained</p>
           </div>
 
         <div>
-          <h2 className="text-blue-600 text-2xl font-bold">
+          <h2 className="text-[rgba(var(--bs-primary-rgb),0.8)] text-2xl font-bold">
             {counts.faculty}+
           </h2>
           <p>Faculty Members</p>
@@ -263,7 +263,7 @@ useEffect(() => {
       
 
         <div>
-          <h2 className="text-blue-600 text-2xl font-bold">
+          <h2 className="text-[rgba(var(--bs-primary-rgb),0.8)] text-2xl font-bold">
             {counts.years}
           </h2>
           <p>Years of Excellence</p>

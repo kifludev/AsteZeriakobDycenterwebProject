@@ -41,16 +41,16 @@ function App() {
 
       <Routes>
         <Route path="AsteZeriakobDycenterwebProject" element={<HomePage />} />
-        <Route path="about" element={<AboutPage />} />
+        <Route path="AsteZeriakobDycenterwebProject/about" element={<AboutPage />} />
 
         {/* ✅ PASS FUNCTION CORRECTLY */}
-        <Route path="news" element={<NewsPage />} />
+        <Route path="AsteZeriakobDycenterwebProject/news" element={<NewsPage />} />
 
-        <Route path="/feedback" element={<FeedbackPage />} />
-        <Route path="/service" element={<ServicePage />} />
-        <Route path="/booking" element={<BookingPage />} />
-        <Route path="/vacancy" element={<VacancyPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="AsteZeriakobDycenterwebProject/feedback" element={<FeedbackPage />} />
+        <Route path="AsteZeriakobDycenterwebProject/service" element={<ServicePage />} />
+        <Route path="AsteZeriakobDycenterwebProject/booking" element={<BookingPage />} />
+        <Route path="AsteZeriakobDycenterwebProject/vacancy" element={<VacancyPage />} />
+        <Route path="AsteZeriakobDycenterwebProject/login" element={<LoginPage />} />
         {/* 🔐 Dashboard */}
         <Route
           path="dashboard"

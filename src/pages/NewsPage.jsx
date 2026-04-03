@@ -65,7 +65,7 @@ export function NewsPage() {
 
             <button
               onClick={fetchNews}
-              className="mt-4 bg-[#740305] text-white px-4 py-2 rounded-lg"
+              className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition"
             >
               Try Again
             </button>
@@ -130,7 +130,7 @@ export function NewsPage() {
 
         {/* BUTTON */}
         <div className="mt-10 text-center">
-          <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
+          <button className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition">
             ➕ Add News Article
           </button>
         </div>

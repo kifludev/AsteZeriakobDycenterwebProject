@@ -55,7 +55,7 @@ export function LoginPage() {
                 <label className="block mb-1 font-medium">Username</label>
                 <div className="flex items-center border rounded-lg overflow-hidden">
                   <span className="px-3 text-gray-500">
-                    <i className="fas fa-user"></i>
+                    <i className="fas fa-user text-xl text-[#740305] mb-3"></i>
                   </span>
                   <input
                     type="text"
@@ -72,7 +72,7 @@ export function LoginPage() {
                 <label className="block mb-1 font-medium">Password</label>
                 <div className="flex items-center border rounded-lg overflow-hidden">
                   <span className="px-3 text-gray-500">
-                    <i className="fas fa-key"></i>
+                     <i className="fas fa-key text-xl text-[#740305] mb-3"></i>
                   </span>
                   <input
                     type="password"
@@ -95,7 +95,7 @@ export function LoginPage() {
               {/* BUTTON */}
               <button
                 type="submit"
-                className="w-full bg-[#740305] text-white py-3 rounded-lg font-semibold hover:opacity-90 transition"
+                className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold rounded-lg shadow-md hover:from-red-600 hover:to-red-800 transition duration-300 hover:scale-105 transition w-full"
               >
                 Submit
               </button>
